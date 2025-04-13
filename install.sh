@@ -9,7 +9,7 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-# Matikan IPv6
+# Nonaktifkan IPv6
 echo "[VPN Premium] Menonaktifkan IPv6..."
 sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
@@ -20,9 +20,9 @@ apt-get update -y
 apt-get update --fix-missing
 apt-get install -y wget curl screen dnsutils
 
-# Unduh script utama dari repo kamu
-SCRIPT_URL="https://raw.githubusercontent.com/Hernasap/vpn-premium-autoscript/main/ub20.sh"
-SCRIPT_FILE="ub20.sh"
+# Unduh script utama dari repo Anda
+SCRIPT_URL="https://raw.githubusercontent.com/Hernasap/vpn-premium-autoscript/main/vpn-premium.sh"
+SCRIPT_FILE="vpn-premium.sh"
 
 echo "[VPN Premium] Mengunduh script utama dari GitHub..."
 curl -sS "$SCRIPT_URL" -o "$SCRIPT_FILE"
